@@ -121,7 +121,7 @@ class DiscourseSingleSignOn < SingleSignOn
       user.name = User.suggest_name(name || username || email)
     end
 
-    if SiteSetting.sso_overrides_avatar && (
+    if SiteSetting.sso_overrides_avatar && avatar_url && (
       avatar_force_update == "true" ||
       avatar_force_update.to_i != 0 ||
       sso_record.external_avatar_url != avatar_url)
